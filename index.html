@@ -13,6 +13,7 @@
           <option value="second">SECOND FLOOR</option>
         </select><br><br>
         <select id="type">
+          <option value="chamber">Chamber</option>
           <option value="cabin">Cabin</option>
           <option value="enclosure">Enclosure</option>
           <option value="workstation">Workstation</option>
@@ -74,6 +75,9 @@
 
         switch (t)
         {
+          case "Chamber":
+                seat += "CH";
+                break;
             case "Cabin":
                 seat += "C";
                 break;
