@@ -21,24 +21,27 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
         ></script>
-        <link href="./index.css" rel="stylesheet" />
+        <link href="\src\index.css" rel="stylesheet" />
     </head>
     <body class="d-flex justify-content-center p-5">
         <div class="card">
             <div class="card-header">
-                <center><h3>Login Form</h3></center>
+                <center><h3>Sign Up Form</h3></center>
             </div>
-            <form class="card-body px-5 py-4">
+            <form class="card-body px-5 py-4" id="signup-form">
                 <label class="custom-field">
-                    <input type="text" class="input" required />
+                    <input type="text" class="input" id="email-id"  required />
                     <span class="placeholder">Email Id</span>
                 </label><br />
                 <label class="custom-field">
-                    <input type="password" class="input" required />
+                    <input type="password" class="input" id="password" required />
                     <span class="placeholder">Password</span>
                 </label><br /><br/>
-                <center><button type="submit" class="btn btn-primary">Login</button></center>
+                <center><button type="submit" class="btn btn-primary" id="signUp-button">Login</button></center>
             </form>
         </div>
+        <script type="module" src="\src\index.js"></script>
+        <script type="module" src="\src\auth.js"></script>
+
     </body>
 </html>
