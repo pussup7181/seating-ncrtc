@@ -23,6 +23,7 @@
   const app = initializeApp(firebaseConfig);
   const db = getDatabase();
   const auth = getAuth();
+
   var nam = document.getElementById("name");
   var designation = document.getElementById("designation");
   var floor = document.getElementById("floor");
@@ -31,6 +32,19 @@
   
   var seatNumber;
   var button = document.getElementById("submit");
+  var email = document.getElementById("email-id");
+  var password = document.getElementById("password");
+  var signUpButton = document.getElementById("signUp-button").addEventListener('click',(e)=>{
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth,email.value,password.value)
+      .then((cred)=>{
+        console.log(cred);
+        window.location.href = "/index.html";
+      });
+  });
+
+
+
 
   function GetSeat(f,t,n){
     var seat = null;
@@ -81,6 +95,8 @@
       console.log(error);
     });
   }
+  button.addEventListener('click',CheckData);
+
 
   function SaveData(){
    seatNumber = GetSeat(floor.options[floor.selectedIndex].text, type.options[type.selectedIndex].text, number.value);
